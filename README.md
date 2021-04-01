@@ -1,6 +1,6 @@
 #  Easybank Sign-up Landing Page!
 
-![Design preview for the Easybank landing page coding challenge](.public/design/desktop-preview.jpg)
+![Design preview for the Easybank landing page coding challenge](public/design/desktop-preview.jpg)
 
 ## Welcome! 👋
 
