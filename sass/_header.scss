@@ -1,0 +1,125 @@
+@import "variables";
+@import "animations";
+
+//header flex
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+//hamburger memnu
+.header {
+  background: $white;
+
+  nav {
+    padding-top: 17px;
+    padding-bottom: 17px;
+  }
+
+  &.open {
+    .overlay {
+      display: block;
+      animation: fadeIn 0.5s ease-in-out forwards;
+    }
+
+    & .hamburger-toggle {
+      > span:first-child {
+        transform: rotate(45deg);
+      }
+      > span:nth-child(2) {
+        opacity: 0;
+      }
+      > span:last-child {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+  .hamburger-toggle {
+    > span {
+      display: block;
+      width: 26px;
+      height: 2px;
+      background-color: $darkBlue;
+      margin: 6px 0px;
+      transform-origin: 1.5px 1px;
+      transition: 0.3s ease-in-out;
+    }
+  }
+
+  & .header-menu {
+    display: none;
+    position: absolute;
+    width: calc(100% - 30px);
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: $white;
+    border-radius: 5px;
+    z-index: 10;
+
+    a {
+      display: block;
+      padding: 10px;
+      color: $darkBlue;
+      font-weight: 400;
+      font-size: $font-sm;
+      text-align: center;
+    }
+  }
+  & .main-menu {
+    a {
+      font-size: $font-sm;
+      color: $grayBlue;
+      font-weight: 400;
+      transition: all 0.3s ease-in;
+      padding-bottom: 30px;
+
+      &:not(:last-child) {
+        margin-right: 30px;
+      }
+
+      &:hover {
+        color: $darkBlue;
+        border-bottom: 4px solid;
+        border-image: linear-gradient(to right, $limeGreen, $brightCyan);
+        border-image-slice: 1;
+        width: 100%;
+      }
+    }
+  }
+
+
+}
+
+//padding
+.container {
+  padding-left: 25px;
+  padding-right: 25px;
+
+  @include breakpoint-up(large) {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+
+//fixed header
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+//overlay
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 65px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient($darkBlue, transparent);
+}

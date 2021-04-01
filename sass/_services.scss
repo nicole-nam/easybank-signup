@@ -1,0 +1,66 @@
+@import "variables";
+@import "mixins";
+
+.color {
+  background-color: $lightGrayBlue;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.services-text {
+  @include breakpoint-up(medium) {
+    text-align: left;
+    width: 50%;
+    padding-left: 75px;
+  }
+  @include centerText;
+
+  h2 {
+    font-size: $font-med;
+    color: $darkBlue;
+    margin-bottom: 30px;
+    padding-top: 50px;
+    padding: 0px 25px;
+    font-weight: 400;
+    @include breakpoint-up(medium) {
+      padding: 0px;
+    }
+  }
+  p {
+    @include info;
+    margin-bottom: 50px;
+  }
+}
+
+//easybank grid
+
+.easybankGrid {
+  @include breakpoint-up(medium) {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding-left: 75px;
+    padding-right: 75px;
+  }
+
+  .easyBank {
+    @include centerText;
+    @include breakpoint-up(medium) {
+      text-align: left;
+    }
+
+    & .sub-title {
+      font-size: $font-sm-v2;
+      color: $darkBlue;
+      font-weight: 400;
+      padding: 20px;
+
+      @include breakpoint-up(medium) {
+        padding-left: 0px;
+      }
+    }
+
+    p {
+      @include info;
+    }
+  }
+}

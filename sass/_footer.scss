@@ -1,0 +1,91 @@
+@import "mixins";
+@import "variables";
+
+footer {
+  @include centerText;
+  background-color: $darkBlue;
+  @include breakpoint-up(medium) {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    text-align: left;
+    padding-left: 110px;
+    padding-right: 110px;
+  }
+
+  .logo-container {
+    padding-top: 20px;
+  }
+  .footer-btn {
+    @include breakpoint-up(medium) {
+      grid-column: 5/6;
+      text-align: right;
+      width: 100%;
+      margin: auto;
+      line-height: 2;
+    }
+  }
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+
+  li:not(:last-child) {
+    padding-right: 20px;
+  }
+
+
+  @include breakpoint-up(medium) {
+    padding-top: 50px;
+    justify-content: left;
+  }
+}
+
+.footer-col-1 {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  font-weight: 400;
+  @include breakpoint-up(medium) {
+    padding-left: 50px;
+  }
+
+  a {
+    color: $white;
+    line-height: 3;
+    font-weight: 400;
+    &:hover {
+      color: $brightCyan;
+    }
+  }
+
+  @include breakpoint-up(medium) {
+    margin-top: 0px;
+  }
+}
+.footer-col-2 {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  font-weight: 400;
+  @include breakpoint-up(medium) {
+    padding-left: 50px;
+  }
+
+
+  a {
+    color: $white;
+    line-height: 3;
+    font-weight: 400;
+    &:hover {
+      color: $brightCyan;
+    }
+  }
+}
+p {
+  color: $grayBlue;
+  font-size: $font-sm;
+  font-weight: 400;
+  padding-top: 40px;
+}

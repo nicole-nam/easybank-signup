@@ -1,0 +1,28 @@
+//breakpoints
+
+$breakpoints-up: ("medium": "768px", "large": "1024px", "xlarge": "1440px");
+$breakpoints-down: ("small": "767px", "medium": "1023px", "large": "1439px");
+
+@mixin breakpoint-up($size){
+    @media (min-width:map-get($breakpoints-up , $size )){
+        @content;
+    }
+}
+
+@mixin breakpoint-down($size){
+    @media (max-width:map-get($breakpoints-down , $size )){
+        @content;
+    }
+}
+
+@mixin info{
+    font-size: $font-sm;
+    margin-bottom: 36px;
+    line-height: 1.5;
+    color: $grayBlue;
+}
+
+@mixin centerText {
+    text-align: center;
+    padding: 25px 25px;
+}
