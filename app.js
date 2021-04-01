@@ -48,6 +48,7 @@ app.post("/", function (req, res) {
   run().catch((e) => res.sendFile(__dirname + "/failure.html"));
 });
 
-app.listen(3000, function () {
+//dynamic port using Heroku
+app.listen(process.env.PORT || 3000, function () {
   console.log("Server is running on port 3000");
 });
