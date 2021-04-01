@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/nicole-nam/easybank-signup#readme",
   "dependencies": {
+    "@mailchimp/mailchimp_marketing": "^3.0.36",
     "express": "^4.17.1"
   }
 }
